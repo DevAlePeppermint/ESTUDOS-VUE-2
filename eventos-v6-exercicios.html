@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Exercicios eventos</title>
+    </head>
+    <body>
+        <div id="desafio">
+            <!-- 1) Exiba um alert quando o botão for clicado -->
+            <div>
+                <button @click="exibirAlerta">Exibir Alerta</button>
+            </div>
+            
+            <!-- 2) Escute o evento "keydown" e armazene o valor na propriedade
+                data (dica: event.target.value) -->
+            <div>
+                <input id="input1" type="text" @keydown='changeP'>
+                <p>{{ valor1 }}</p>
+            </div>
+            
+            <!-- 3) Ajuste o exemplo 2 para disparar o evento "keydown" somente
+                quando a tecla for ENTER -->
+            <div>
+                <input id='input2' type="text" @keydown.enter='changePWithEnter'>
+                <p>{{ valor2 }}</p>
+            </div>
+        </div>
+
+        <!--SCRIPT -->
+        <script >
+            new Vue ({
+                el:'#desafio',
+                data:{
+
+                    valor1: '',
+                    valor2: ''
+
+                },
+                methods:{
+                    exibirAlerta(){
+                        alert('Você cliciu no botão')
+                    }, 
+                    changeP(){
+                        var input1data = document.getElementById('input1').value
+                        this.valor1 = input1data                        
+                    },
+                    changePWithEnter(){
+                        var input2data = document.getElementById('input2').value
+                        this.valor2 = input2data
+                    }
+
+
+
+
+                }
+
+
+
+
+
+            })
+
+
+
+
+        </script> 
+
+
+    </body>
+</html>

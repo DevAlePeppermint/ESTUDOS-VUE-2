@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
-    <title>Eventos 4</title>
+    <title>Eventos 5</title>
 </head>
 <body>
 
@@ -35,7 +35,7 @@
 
         <hr>
 
-        <input id="inputName" type="text" @keyup="exibirAlerta">
+        <p>Coloque aqui seu número. Para somar, pressione enter + alt</p><input id="inputName" type="text" @keyup.enter.alt="exibirAlerta">
 
     </div>
 
@@ -57,15 +57,26 @@
                     this.x = event.clientX
                     this.y = event.clientY
                 },
-                exibirAlerta(){
-                    var inputName = document.getElementById('inputName')
-                    inputName.toString()
-                    console.log(inputName.value)
-                    if(inputName.value == 'Ale' || inputName.value == 'liandro' || inputName.value == 'Liandrin'){
-                        alert('Hey, nome lindo! ') 
-                    } 
-                }
+                // exibirAlerta(){
+                //     var inputName = document.getElementById('inputName')
+                //     inputName.toString()
+                //     console.log(inputName.value)
+                //     if(inputName.value == 'Ale' || inputName.value == 'Alexandra' || inputName.value == 'Xanda'){
+                //         alert('Hey, nome lindo! ') 
+                //     } else {
+                //         alert('Nome feio da porra')
+                //     }
+                // }
 
+                    exibirAlerta(){
+                    var inputName = document.getElementById('inputName').value
+                    
+                    console.log(inputName)
+
+                    this.contador += Number.parseInt(inputName)
+
+
+                }
             }
           
         })
