@@ -1,0 +1,54 @@
+v-bind (muda dinamicamente um atributo de uma tag http)
+
+	v-bind:atributo="nomeDaDiretivaEmData"
+	v-bind:href="link"
+___________________________________________________________
+
+v-once Atributo utilizado para evitar a re-renderização. Por exemplo, caso um atributo inicie com um valor e ao longo do codigo mude, essa diretiva faz com que o HTML não exiba o novo valor. 
+___________________________________________________________
+
+v-html: Atributo para você conseguir interpretar HTML direto do seu codigo em VUE.
+
+	CODIGO NO OBJETO VUE:
+	linkWithHtml: '<a href="https://www.google.com.br"> Google <a>'
+
+	CÓDIGO NO HTML:
+	<p v-html="linkWithHtml"></p>
+___________________________________________________________
+
+v-on - diretiva para interceptar os eventos quando eles acontecem.
+	v-on:click"somar"
+(metodos click, por exwmplo)
+	{@click, @mouseover, @submit, @keyup.enter}
+
+___________________________________________________
+$event = passa o evento como parametro
+p ex 
+	@click ="somar(5, $event)"
+	somar (numero, ev) {
+		console.log(numero, ev)
+		//saida vai ser 5 e o evento que foi disparado
+
+__________________________________________________
+MODOFICADORES DE EVENTO
+.stop - para o evento (v-on, @) naquela parte da tela
+.prevent - previne que o componente dispare aquilo para q originalmente foi feito
+	EX:
+	@mousemove.stop = naquela tag o evento mousemove não será aplicado
+	@click.prevent = quando aquele componente for clicado não será aplicado o default (por exemplo, uma tag a (link) com essa propriedade não vai redirecionar ao site.
+
+
+
+
+___________________________________________
+
+v-show (mostra algo se for true )
+v-for (faz um loop)
+
+:style
+Vue.component('nameOfComponent', {optionsObject})
+
+
+
+
+

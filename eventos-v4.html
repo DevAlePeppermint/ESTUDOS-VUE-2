@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <title>Eventos 4</title>
+</head>
+<body>
+
+
+    <div id="app">
+        <p>{{  contador }}</p>
+        <button @click="somar(1)">SOMAR 1</button>
+        <button @click="somar(2)">SOMAR 2</button>
+        <button @click="somar(5)">SOMAR 5</button>
+        <button @click="somar(10)">SOMAR 10</button>
+        <button @click="somar(-10)">DIMINUI  10</button>
+        <button @click="somar(20)">
+            <p style="background-color: aquamarine; ">Se clicar em cima dessas letras, soma 20</p>
+            <p @click.stop style="background-color: rebeccapurple; color: white;" > Se clicar em cima dessas letras, nada ocorre</p>
+        </button>
+                
+        
+        <p style="height: 200px; background-color: aqua;" @mousemove="atualizarXY">
+            Mouse: {{ x }} e {{ y }}
+            <span>NÃO QUERO QUE AQUI O EVENTO MOUSEMOVE SEJA DISPARADO. POR PADRÃO, O EVENTO DO PAI ACABA ESCOANDO PARA O EVENTO FILHO</span>
+            <br> <br>
+            <span @mousemove.stop="">PARA QUE ISSO OCORRA, PRECISO COLOCAR NA TAG FILHO O ".STOP". NESSE EXEMPLO, O CODIGO NESSA TAG É @MOUSEMOVE.STOP=""</span>
+        </p>
+
+    </div>
+
+    <script>
+        new Vue({
+            el:'#app', 
+            data:{
+                contador: 0,
+                x: 0,
+                y: 0
+            },
+            methods: {
+                somar(numeroSomado){
+                //somar(passo, ev)
+                    //console.log(passo,ev)
+                    this.contador += numeroSomado
+                },
+                atualizarXY(event){
+                    this.x = event.clientX
+                    this.y = event.clientY
+                },
+
+
+
+            }
+          
+        })
+    </script>
+</body>
+</html>

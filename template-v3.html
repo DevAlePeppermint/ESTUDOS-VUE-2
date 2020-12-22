@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <title>Document</title>
+</head>
+<body>
+
+
+    <div id="app">
+        <p>{{ titulo }}</p> <!--Padrão double moustache-->
+        <p>{{ saudacao() }}</p><!--Para fazer retorno de metodo, necessario indicar que é um metodo-->
+
+
+    </div>
+
+
+
+
+
+    <script>
+        new Vue({
+            el:'#app', //Seletor que queremos controlar por vue. Nesse caso, o id app
+            data:{
+                titulo: 'Usando Vue JS dinamicsss'
+            },
+            methods: {
+                saudacao(){
+                    return this.titulo //Utilizamos o this para selecionar o que está no mesmo objeto.
+                }
+            }
+        
+                
+        })
+    </script>
+</body>
+</html>

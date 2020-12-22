@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <title>Eventos</title>
+</head>
+<body>
+
+
+    <div id="app">
+        <p>{{  contador }}</p>
+        <button v-on:click="somar">SOMAR 1</button>
+        <button v-on:click="diminuir">DIMINUI 1</button>
+    </div>
+
+    <script>
+        new Vue({
+            el:'#app', //Seletor que queremos controlar por vue. Nesse caso, o id app
+            data:{
+                contador: 0
+            },
+            methods: {
+                somar(){
+                    this.contador++
+                }, 
+                diminuir(){
+                    this.contador--
+                }
+            }
+          
+        })
+    </script>
+</body>
+</html>
